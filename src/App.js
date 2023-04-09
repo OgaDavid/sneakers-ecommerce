@@ -7,8 +7,9 @@ import { StoreReducer } from "./utils/storeReducer";
 import { INITIAL_STATE } from "./utils/storeReducer";
 
 function App() {
-
   const [state, dispatch] = useReducer(StoreReducer, INITIAL_STATE);
+
+  console.log(state.cartItems)
 
   return (
     <>
@@ -24,10 +25,12 @@ function App() {
               {state.products.categories.sneakers[0].title}
             </h1>
             <p className="text-dark-grayish-blue">
-            {state.products.categories.sneakers[0].description}
+              {state.products.categories.sneakers[0].description}
             </p>
             <div className="mt-5">
-              <p className="text-2xl font-bold inline pr-3">${state.products.categories.sneakers[0].price}</p>
+              <p className="text-2xl font-bold inline pr-3">
+                ${state.products.categories.sneakers[0].price}
+              </p>
               <span className="text-orange font-bold text-sm p-1 rounded-md bg-pale-orange">
                 50%
               </span>
@@ -37,7 +40,7 @@ function App() {
             <div className="md:flex max-sm:justify-center gap-20 mt-5">
               <div className="max-md:items-center max-md:flex max-md:mb-3">
                 <div className="bg-light-grayish-blue max-md:py-3 px-4 gap-10 rounded-xl flex items-center">
-                  <button onClick={() => dispatch({type: "DECREASE_CART"})}>
+                  <button onClick={() => dispatch({ type: "DECREASE_CART" })}>
                     <img
                       className="px-2 cursor-pointer"
                       src="assets/icons/icon-minus.svg"
@@ -45,7 +48,7 @@ function App() {
                     />
                   </button>
                   <span className="font-semibold text-2xl">{state.cart}</span>
-                  <button  onClick={() => dispatch({type: "INCREASE_CART"})}>
+                  <button onClick={() => dispatch({ type: "INCREASE_CART" })}>
                     <img
                       className="px-2 cursor-pointer"
                       src="assets/icons/icon-plus.svg"
@@ -54,7 +57,10 @@ function App() {
                   </button>
                 </div>
               </div>
-              <button onClick={() => dispatch({type: "ADD_CART"})} className="px-10 py-4 bg-orange text-white flex rounded-xl">
+              <button
+                onClick={() => dispatch({ type: "ADD_CART" })}
+                className="px-10 py-4 bg-orange text-white flex rounded-xl"
+              >
                 <img
                   className="pr-2"
                   src="assets/icons/icon-cart-white.svg"

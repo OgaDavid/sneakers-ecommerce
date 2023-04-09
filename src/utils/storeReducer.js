@@ -5,6 +5,7 @@ export const INITIAL_STATE = {
     categories: {
       sneakers: [
         {
+          id: 0,
           title: "Fall Limited Edition Sneakers",
           description:
             "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
@@ -14,7 +15,7 @@ export const INITIAL_STATE = {
     },
   },
   cart: 0,
-  cartItems: [],
+  cartItems: []
 };
 
 export const StoreReducer = (state, action) => {
