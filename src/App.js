@@ -2,11 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ImageSwiper from "./components/Swiper";
-import { useReducer } from "react";
-// import { INITIAL_STATE, storeReducer } from "./utils/storeReducer";
-
 function App() {
-  // const [state, dispatch] = useReducer(storeReducer, INITIAL_STATE);
 
   return (
     <>
@@ -36,14 +32,30 @@ function App() {
 
             <div className="md:flex max-sm:justify-center gap-20 mt-5">
               <div className="max-md:items-center max-md:flex max-md:mb-3">
-              <div className="bg-light-grayish-blue max-md:py-3 px-4 gap-10 rounded-xl flex items-center">
-                <img className="px-2 cursor-pointer" src="assets/icons/icon-minus.svg" alt="minus" />
+                <div className="bg-light-grayish-blue max-md:py-3 px-4 gap-10 rounded-xl flex items-center">
+                  <button>
+                    <img
+                      className="px-2 cursor-pointer"
+                      src="assets/icons/icon-minus.svg"
+                      alt="minus"
+                    />
+                  </button>
                   <span className="font-semibold text-2xl">0</span>
-                <img className="px-2 cursor-pointer" src="assets/icons/icon-plus.svg" alt="plus" />
-              </div>
+                  <button>
+                    <img
+                      className="px-2 cursor-pointer"
+                      src="assets/icons/icon-plus.svg"
+                      alt="plus"
+                    />
+                  </button>
+                </div>
               </div>
               <button className="px-10 py-4 bg-orange text-white flex rounded-xl">
-                <img className="pr-2" src="assets/icons/icon-cart-white.svg" alt="cart" />
+                <img
+                  className="pr-2"
+                  src="assets/icons/icon-cart-white.svg"
+                  alt="cart"
+                />
                 Add to cart
               </button>
             </div>
