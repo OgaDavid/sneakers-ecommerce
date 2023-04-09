@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Header() {
+export default function Header({ state }) {
   // mobile nav functionality
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleNavOpen = () => {
@@ -37,8 +37,9 @@ export default function Header() {
             </div>
           </nav>
         </div>
-        <div className="flex items-center gap-4 md:gap-8">
-          <div>
+        <div className="flex items-center cursor-pointer gap-4 md:gap-8">
+          <div className="relative">
+            {state.cart > 0 ? <div className="absolute bg-orange px-[6px] -top-4 -right-3 text-sm text-white rounded-full">{state.cart}</div> : null}
             <img src="assets/icons/icon-cart.svg" alt="cart" />
           </div>
           <div className="w-10 md:w-14">
